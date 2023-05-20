@@ -16,6 +16,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  font-family: 'Wix Madefor Display', sans-serif;
 }
 
 p {
@@ -23,19 +24,20 @@ p {
 }
 
 :root {
-  --primary-blue: #009ee6;
-  --primary-dark: #181d40;
+  --primary-blue:   #885e3e;
+  --primary-dark: #381c06;
   --primary-white: #fff;
-  --secondary-green: #729d21;
-  --secondary-yellow: #ffc700;
-  --secondary-pink: #cc234d;
-  --secondary-purple: #7f2f7b;
-  --secondary-orange: #e88639;
+  --secondary-sepia: #856B5E;
   --neutral-black: #333;
   --neutral-dark-black: #000000;
   --neutral-gray: #757575;
   --neutral-light-gray: #efeff2;
   --neutral-white: #f5f5f5;
 
-  --font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
+  --secondary-green: #729d21;
+  --secondary-yellow: #ffc700;
+  --secondary-pink: #cc234d;
+  --secondary-purple: #7f2f7b;
+  --secondary-orange: #e88639;
+
+  --font-family: 'Wix Madefor Display', sans-serif;}
