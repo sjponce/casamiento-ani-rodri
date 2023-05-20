@@ -3,7 +3,7 @@
     font-size: 2.1rem;
     line-height: 2.1rem;
     font-weight: 500;
-    color: var(--neutral-dark-black);
+    color: var(--primary-dark);
     @media (min-width: 768px) and (max-width: 1365px) {
       font-size: 1.8rem;
       line-height: 1.8rem;
@@ -18,7 +18,7 @@
     font-size: 1.8rem;
     line-height: 1.8rem;
     font-weight: 500;
-    color: var(--neutral-dark-black);
+    color: var(--primary-dark);
     @media (min-width: 768px) and (max-width: 1365px) {
       font-size: 1.25rem;
       line-height: 1.25rem;
@@ -33,7 +33,7 @@
     font-size: 1.5rem;
     line-height: 1.5rem;
     font-weight: 500;
-    color: var(--neutral-dark-black);
+    color: var(--primary-dark);
     @media (min-width: 768px) and (max-width: 1365px) {
       font-size: 1.25rem;
       line-height: 1.25rem;
@@ -48,13 +48,14 @@
     font-size: 1.1rem;
     line-height: 1.1rem;
     font-weight: 500;
-    color: var(--neutral-dark-black);
+    color: var(--primary-dark);
   }
   
   .bp-text-1 {
     line-height: 1.5rem;
     font-size: 1.25rem;
-    color: var(--neutral-dark-black);
+    color: var(--primary-dark);
+    font-weight: 500;
     @media (min-width: 768px) and (max-width: 1365px) {
       font-size: 1.25rem;
       line-height: 1.5rem;
@@ -68,7 +69,7 @@
   .bp-text-2 {
     font-size: 1rem;
     line-height: 1.5rem;
-    color: var(--neutral-dark-black);
+    color: var(--primary-dark);
   }
   
   .bp-link {
@@ -137,13 +138,17 @@
   }
   
   .bp-container {
-    background-color: var(--neutral-white);
+    background-color: var(--secondary-sepia);
     padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @media (max-width: 768px) {
       padding: 45px 24px;
     }
     @media (max-width: 375px) {
       padding: 45px 16px;
+      text-align: center;
     }
   }
   
