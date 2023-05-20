@@ -83,7 +83,7 @@
   }
   
   .bp-link:active {
-    color: var(--primary-dark);
+    color: var(--primary- );
     text-decoration: underline;
   }
   
@@ -137,13 +137,14 @@
   }
   
   .bp-container {
+    background-color: var(--neutral-white);
     max-width: 1158px;
-    padding: 0 30px 60px 30px;
+    padding: 60px 30px;
     @media (max-width: 768px) {
-      padding: 0 24px 60px 24px;
+      padding: 60px 24px;
     }
     @media (max-width: 375px) {
-      padding: 0 16px 60px 16px;
+      padding: 60px 16px;
     }
   }
   
@@ -269,7 +270,8 @@
   // Scrollbar
   
   ::-webkit-scrollbar {
-    width: 16px;
+    width: 8px;
+    background-color: var(--neutral-light-gray );
     @media (max-width: 767) {
       display: none;
     }

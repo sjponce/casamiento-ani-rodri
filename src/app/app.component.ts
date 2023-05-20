@@ -9,7 +9,21 @@ export class AppComponent {
 @ViewChild('audio') audio: any;
 
 constructor() {}
-fogos = Array(20).fill(10);
+images = [{
+  image: 'assets/michimichi.jpg',
+  thumbImage: 'assets/michimichi.jpeg',
+  alt: 'UN MICHI',
+},
+{
+  image: 'assets/michinegro.webp',
+  thumbImage: 'assets/michinegro.jpeg',
+  alt: 'OTRO MICHI',
+},
+{
+  image: 'assets/MICHIPARADO.jpg',
+  thumbImage: 'assets/MICHIPARADO.jpeg',
+  alt: 'UN MICHI MAS',
+}]
 
   playAudio(){
     let audio = new Audio();
