@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CountDownComponent } from './count-down/count-down.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountDownComponent
+    CountDownComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
