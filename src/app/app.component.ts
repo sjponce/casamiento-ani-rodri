@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import Swal from 'sweetalert2';
+import { Component, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { take, BehaviorSubject, from } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+import { FireStoreService } from './services/firestore.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +14,24 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 export class AppComponent {
 @ViewChild('audio') audio: any;
 
-constructor() {}
+loading$ = new BehaviorSubject(false);
+
+constructor(private fireService: FireStoreService, private fb: FormBuilder) {
+  this.musicForm = this.fb.group({
+    nombre: ['', Validators.required],
+    autor: [''],
+    link: [''],
+  });
+  this.asistenciaForm = this.fb.group({
+    asistencia: ['', Validators.required],
+    nombre: ['', Validators.required],
+    detalle: [''],
+  });
+}
+
+musicForm: FormGroup;
+asistenciaForm: FormGroup;
+
 images = [{
   image: 'assets/michimichi.jpg',
   thumbImage: 'assets/michimichi.jpeg',
@@ -34,32 +57,72 @@ images = [{
 
   title = 'flamante-casorio';
 
-  clickiclaka() {
-    this.playAudio()
-  window.alert(`
-  Confirmas cada señal,
-  Ya no dudo estoy seguro que eres tú mi otra parte,
-  No es casual ni mucho menos que tengamos tantas cosas en común...
-  Es tu vida con mi vida un complemento tan perfecto,
-  Que ahora todo lo comprendo, te esperaba hace tiempo,
-  Guardándote mi amor, guardando éste amor...
-  CORO
-  Porque me puedes de punta a punta,
-  Porque desnudas todo mi ser,
-  Y es que contigo todo es inmenso,
-  Y mi esperanza vuelve a nacer,
-  Porque me puedes y a mí me gusta,
-  Porque superas lo que soñé,
-  Estar contigo es un privilegio,
-  Hoy por ti vuelvo a nacer... X2
-  Descubres en mis adentros capacidades que ignoraba,
-  Y me enseñas a entregarme por completo.
-  No existen dudas, está a la vista,
-  Tenemos tanta piel...
-  Es tu vida con mi vida un complemento tan perfecto,
-  Que ahora todo lo comprendo, te esperaba hace tiempo,
-  Guardándote mi amor, guardando éste amor...`)
-  window.alert("https://www.youtube.com/watch?v=Q54BrGTIi9I&ab_channel=SalsaM%C3%BAsica")
+putMusica() {
+  this.loading$.next(true);
+  from(this.fireService.putMusica(this.musicForm.getRawValue())).pipe(
+    take(1),
+    catchError(e => {
+      Swal.fire({
+        text: 'No se pudo agregar la canción :(',
+        toast: true,
+        icon: 'error',
+        timer: 1500,
+        showConfirmButton: false,
+        position: 'bottom-right'
+      });
+      throw e;
+    }),
+  ).subscribe(() => {
+    this.loading$.next(false);
+    Swal.fire({
+      text: 'Canción agregada',
+      toast: true,
+      icon: 'success',
+      timer: 1500,
+      showConfirmButton: false,
+      position: 'bottom-right'
+    });
+    this.musicForm.setValue({
+      autor: '',
+      nombre: '',
+      link: '',
+    });
+    this.musicForm.updateValueAndValidity();
+  })
+}
+
+putAsistencia() {
+  this.loading$.next(true);
+  from(this.fireService.putAsistencia(this.asistenciaForm.getRawValue())).pipe(
+    take(1),
+    catchError(e => {
+      Swal.fire({
+        text: 'No se pudo agregar la canción :(',
+        toast: true,
+        icon: 'error',
+        timer: 1500,
+        showConfirmButton: false,
+        position: 'bottom-right'
+      });
+      throw e;
+    }),
+  ).subscribe(() => {
+    this.loading$.next(false);
+    Swal.fire({
+      text: 'Asistencia confirmada!',
+      toast: true,
+      icon: 'success',
+      timer: 1500,
+      showConfirmButton: false,
+      position: 'bottom-right'
+    });
+    this.asistenciaForm.setValue({
+      asistencia: '',
+      nombre: '',
+      detalle: '',
+    });
+    this.asistenciaForm.updateValueAndValidity();
+  });
 }
 
 }

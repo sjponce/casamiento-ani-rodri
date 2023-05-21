@@ -5,7 +5,7 @@
 </div>
 
 <div class="bp-container">
-  <h2 class="bp-title-2">LA HISTORIA DE TODO</h2>
+  <h2 class="bp-title-1">LA HISTORIA DE TODO</h2>
   <div>
     <p class="bp-text-1">Sí quiero, amarte y cuidarte el resto de mi vida.</p>
     <p class="bp-text-1">
@@ -74,18 +74,18 @@
       .gmap_iframe {
         height: 400px !important;
       }
-      </style>
+    </style>
   </div>
   <p class="bp-text-3">Aguaribay S/n, X5149 Saldan</p>
 </div>
 
 <div class="bp-container">
   <div class="bp-row">
-    <img class="icon" src="assets\\dress.png"/>
+    <img class="icon" src="assets\\dress.png" />
     <h2 class="bp-title-1">DRESS CODE</h2>
-    <img class="icon" src="assets\\groom-suit.png"/>
+    <img class="icon" src="assets\\groom-suit.png" />
   </div>
-  
+
   <section class="carrousel bp-margin-top-16">
     <img src="assets/peaky blinders 1.jpeg" />
     <img src="assets/peaky blinders 2.jpeg" />
@@ -95,73 +95,92 @@
 </div>
 
 <div class="bp-container bp-container-dark">
-  <img class="icon" src="assets\\music-white.png"/>
+  <img class="icon" src="assets\\music-white.png" />
   <h2 class="bp-title-1">Canciones que no pueden faltar</h2>
   <p class="bp-text-1">
     Agrega esos temazos que necesitas escuchar si o si esa noche
   </p>
-  <div class="row">
-    <div class="bp-col-sm-4">
-      <div class="group bp-margin-top-32">
-        <input type="text" />
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Cancion</label>
+  <form [formGroup]="musicForm">
+    <div class="row">
+      <div class="bp-col-sm-4">
+        <div class="group bp-margin-top-32">
+          <input type="text" formControlName="nombre"/>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Cancion</label>
+        </div>
       </div>
-    </div>
-    <div class="bp-col-sm-4">
-      <div class="group bp-margin-top-32">
-        <input type="text" />
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Autor</label>
+      <div class="bp-col-sm-4">
+        <div class="group bp-margin-top-32">
+          <input type="text" formControlName="autor"/>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Autor</label>
+        </div>
       </div>
-    </div>
-    <div class="bp-col-sm-4">
-      <div class="group bp-margin-top-32">
-        <input type="text" />
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Link</label>
+      <div class="bp-col-sm-4">
+        <div class="group bp-margin-top-32">
+          <input type="text" formControlName="link"/>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Link</label>
+        </div>
       </div>
-    </div>
 
-    <button class="bp-button-primary  bp-margin-top-16">Enviar</button>
-  </div>
+      <button
+        class="bp-button-primary bp-margin-top-16"
+        [disabled]="(loading$ | async) || musicForm.invalid"
+        (click)="putMusica()"
+      >
+        <p *ngIf="!(loading$ | async)">Enviar</p>
+        <div *ngIf="loading$ | async" class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </button>
+    </div>
+  </form>
 </div>
 <div class="bp-container maps-container bp-container-dark">
   <h1 class="bp-title-1">"La vida es una lenteja o la tomas o la dejas"</h1>
   <p class="bp-text-1">Sun tzu, El arte de la guerra.</p>
 </div>
 <div class="bp-container">
-  <img class="icon" src="assets\\engagement-ring.png"/>
+  <img class="icon" src="assets\\engagement-ring.png" />
   <h1 class="bp-title-1">Confirma tu asistencia</h1>
-  <p class="bp-text-1">Confirmar asistencia hasta el 15 de Septiembre de 2023</p>
-  <p class="bp-text-1">Si contas con alguna restricción alimentaria o necesitas un menú vegetariano o vegano podes aclararlo abajo</p>
+  <p class="bp-text-1">
+    Confirmar asistencia hasta el 15 de Septiembre de 2023
+  </p>
+  <p class="bp-text-1">
+    Si contas con alguna restricción alimentaria o necesitas un menú vegetariano
+    o vegano podes aclararlo abajo
+  </p>
   <div class="row">
+    <form [formGroup]="asistenciaForm">
     <div class="bp-col-sm-4">
       <div class="container">
         <div class="radio-tile-group">
           <div class="input-container">
-            <input id="walk" class="radio-button" type="radio" name="radio">
+            <input id="walk" class="radio-button" type="radio" [value]="true" formControlName="asistencia"/>
             <div class="radio-tile">
               <label for="walk" class="radio-tile-label">Si</label>
             </div>
           </div>
-      
+
           <div class="input-container">
-            <input id="bike" class="radio-button" type="radio" name="radio">
+            <input id="bike" class="radio-button" type="radio" [value]="false" formControlName="asistencia"/>
             <div class="radio-tile">
               <label for="bike" class="radio-tile-label">No</label>
             </div>
           </div>
         </div>
       </div>
-      
     </div>
     <div class="bp-col-sm-4">
       <div class="group bp-margin-top-32">
-        <textarea></textarea>
+        <textarea formControlName="detalle"></textarea>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Ingrese algún dato importante...</label>
@@ -169,13 +188,26 @@
     </div>
     <div class="bp-col-sm-4">
       <div class="group bp-margin-top-32">
-        <input type="text" />
+        <input type="text" formControlName="nombre"/>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Nombre completo</label>
       </div>
     </div>
 
-    <button class="bp-button-primary  bp-margin-top-16">Enviar</button>
+    <button
+      class="bp-button-primary bp-margin-top-16"
+      [disabled]="(loading$ | async) || asistenciaForm.invalid"
+      (click)="putAsistencia()"
+    >
+      <p *ngIf="!(loading$ | async)">Enviar</p>
+      <div *ngIf="loading$ | async" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </button>
+  </form>
   </div>
 </div>

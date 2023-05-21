@@ -5,18 +5,29 @@ import { AppComponent } from './app.component';
 import { CountDownComponent } from './count-down/count-down.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from "../environments/environment";
+import { FireStoreService } from './services/firestore.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountDownComponent,
-    CalendarComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp({ ...environment.firebaseConfig })),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [FireStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
