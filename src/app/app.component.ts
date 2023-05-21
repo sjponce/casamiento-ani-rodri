@@ -61,7 +61,7 @@ putMusica() {
   this.loading$.next(true);
   from(this.fireService.putMusica(this.musicForm.getRawValue())).pipe(
     take(1),
-    catchError(e => {
+    catchError((e: Error) => {
       Swal.fire({
         text: 'No se pudo agregar la canción :(',
         toast: true,
@@ -95,7 +95,7 @@ putAsistencia() {
   this.loading$.next(true);
   from(this.fireService.putAsistencia(this.asistenciaForm.getRawValue())).pipe(
     take(1),
-    catchError(e => {
+    catchError((e: Error) => {
       Swal.fire({
         text: 'No se pudo agregar la canción :(',
         toast: true,
