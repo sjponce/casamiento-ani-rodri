@@ -7,8 +7,12 @@
   <h2 class="bp-title-2">LA HISTORIA DE TODO</h2>
   <div>
     <p class="bp-text-1">Sí quiero, amarte y cuidarte el resto de mi vida.</p>
-    <p class="bp-text-1">Sí quiero, que podamos juntos lograr nuestras metas.</p>
-    <p class="bp-text-1">Sí quiero, que podamos crecer juntos y poder ser uno.</p>
+    <p class="bp-text-1">
+      Sí quiero, que podamos juntos lograr nuestras metas.
+    </p>
+    <p class="bp-text-1">
+      Sí quiero, que podamos crecer juntos y poder ser uno.
+    </p>
     <p class="bp-text-1">
       Nuestro amor florece cada día en nosotros y madura cada dia mas. Muchas
       veces caótico, pero siempre maravilloso.
@@ -32,41 +36,90 @@
   </section>
 </div>
 
-<div class="bp-container maps-container">
+<div class="bp-container maps-container bp-container-dark">
   <h2 class="bp-title-1">
     <span class="material-symbols-outlined"> location_on </span>Ubicación
   </h2>
-  <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=320&amp;height=400&amp;hl=en&amp;q=Mansueto 1912&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://capcuttemplate.org/">Capcut Template</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
+  <div class="mapouter">
+    <div class="gmap_canvas">
+      <iframe
+        class="gmap_iframe"
+        width="100%"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=320&amp;height=400&amp;hl=en&amp;q=Mansueto 1912&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></iframe
+      ><a href="https://capcuttemplate.org/">Capcut Template</a>
+    </div>
+    <style>
+      .mapouter {
+        position: relative;
+        text-align: right;
+        width: 100%;
+        height: 400px;
+      }
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        width: 100%;
+        height: 400px;
+      }
+      .gmap_iframe {
+        height: 400px !important;
+      }
+    </style>
+  </div>
 </div>
 
 <div class="bp-container">
-  <span class="bp-title-1 material-symbols-outlined">
-    checkroom
-    </span>
-    <h2 class="bp-title-1"> DRESS CODE </h2>
-    <p class="bp-text-1"> Peaky Blinders </p>
+  <div class="bp-row">
+    <img class="icon" src="assets\\dress.png"/>
+    <h2 class="bp-title-1">DRESS CODE</h2>
+    <img class="icon" src="assets\\groom-suit.png"/>
+  </div>
   
   <section class="carrousel bp-margin-top-16">
     <img src="assets/peaky blinders 1.jpeg" />
     <img src="assets/peaky blinders 2.jpeg" />
     <img src="assets/peaky blinders 3.jpeg" />
   </section>
+  <p class="bp-text-1">Peaky Blinders</p>
 </div>
 
-<div class="bp-container">
-    <h2 class="bp-title-1"> Que canciones no pueden faltar? </h2>
-    <p class="bp-text-1"> Agrega esos temazos que necesitas escuchar si o si esa noche </p>
-    <div class="row">
-      <div class="bp-col-sm-4">
-        <input type="text" placeholder="Nombre"/>
+<div class="bp-container bp-container-dark">
+  <img class="icon" src="assets\\music-white.png"/>
+  <h2 class="bp-title-1">Que canciones no pueden faltar?</h2>
+  <p class="bp-text-1">
+    Agrega esos temazos que necesitas escuchar si o si esa noche
+  </p>
+  <div class="row">
+    <div class="bp-col-sm-4">
+      <div class="group bp-margin-top-32">
+        <input type="text" />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Cancion</label>
       </div>
-      <div class="bp-col-sm-4">
-        <input type="text" placeholder="Autor"/>
-      </div>
-      <div class="bp-col-sm-4">
-        <input type="text" placeholder="Link"/>
-      </div>
-
-      <button class="bp-button-primary">Enviar</button>
     </div>
+    <div class="bp-col-sm-4">
+      <div class="group bp-margin-top-32">
+        <input type="text" />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Autor</label>
+      </div>
+    </div>
+    <div class="bp-col-sm-4">
+      <div class="group bp-margin-top-32">
+        <input type="text" />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Link</label>
+      </div>
+    </div>
+
+    <button class="bp-button-primary  bp-margin-top-16">Enviar</button>
+  </div>
 </div>
