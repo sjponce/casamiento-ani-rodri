@@ -1,14 +1,17 @@
 @import '.\\design-system.scss';
+@import '../src/assets/font.css';
 
 /* You can add global styles to this file, and also import other style files */
-
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  background-image: url("..\\src\\assets\\anirodriparejafeliz.jpeg");
+  @media (max-width: 768px) {    
+    background-image: url("..\\src\\assets\\FONDO-01.png");
+  }
+  background-image: url("..\\src\\assets\\FONDO-02.png");
   background-blend-mode: saturation;
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
@@ -39,8 +42,8 @@ p {
   --secondary-purple: #7f2f7b;
   --secondary-orange: #e88639;
 
-  --font-family: 'Montserrat', sans-serif;
+  --font-family: 'Leander', 'Montserrat', sans-serif;
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: var(--font-family); }
