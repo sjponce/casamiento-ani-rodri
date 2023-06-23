@@ -51,6 +51,18 @@
 	}
 }
 
+.wasa {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	background-image: url('../assets/whatsapp.png');
+	background-blend-mode: saturation;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 24px;
+	height: 24px;
+}
+
 .picki-logo {
 	display: flex;
     align-items: center;
@@ -62,6 +74,20 @@
 		background-size: 100% 100%;
 		height: 150px;
 		width: 150px;
+	}
+}
+
+.firulete-fecha {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	span {
+		background-image: url('../assets/firulete-fecha.svg');
+		background-blend-mode: saturation;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		height: 41px;
+    	width: 480px;
 	}
 }
 
@@ -116,7 +142,7 @@
 }
 
 .logo-container {
-	padding:  120px 0;
+	padding:  50px 0;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -155,4 +181,9 @@
 
 .icon {
 	height: 70px;
+}
+
+.link {
+	text-decoration: unset;
+	text-align: center;
 }

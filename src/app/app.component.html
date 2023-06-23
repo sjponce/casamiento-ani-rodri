@@ -54,12 +54,16 @@
   <div class="save-the-date bp-row bp-col-12 bp-margin-bottom-16">
     <p class="bp-title-1">SAVE THE DATE</p>
   </div>
-    <p class="bp-text-1">Debes hacerte presente el día:</p>
-  <app-calendar></app-calendar>
-</div>
+  <p class="bp-title-2">Sábado 30 de Marzo de 2024</p>
+  <p class="bp-title-2">6:30PM</p>
+  <div class="firulete-fecha bp-row bp-col-12">
+    <span></span>
+  </div>
+
+  </div>
 <div class="bp-container maps-container bp-container-dark">
   <h2 class="bp-title-1">
-    <span class="material-symbols-outlined"> location_on </span>Ubicación
+    <span class="material-symbols-outlined"> location_on </span>Mansueto 1912
   </h2>
   <div class="mapouter">
     <div class="gmap_canvas">
@@ -177,14 +181,14 @@
           <div class="input-container">
             <input id="walk" class="radio-button" type="radio" [value]="true" formControlName="asistencia"/>
             <div class="radio-tile">
-              <label for="walk" class="radio-tile-label">Si</label>
+              <label for="walk" class="radio-tile-label">Si :)</label>
             </div>
           </div>
 
           <div class="input-container">
             <input id="bike" class="radio-button" type="radio" [value]="false" formControlName="asistencia"/>
             <div class="radio-tile">
-              <label for="bike" class="radio-tile-label">No</label>
+              <label for="bike" class="radio-tile-label">No :(</label>
             </div>
           </div>
         </div>
@@ -206,22 +210,29 @@
         <label>Restricciones alimentarias</label>
       </div>
     </div>
-    <p class="bp-text-1">Para conocer el valor de la tarjeta escribinos</p>
-
+    
     <button
-      class="bp-button-primary bp-margin-top-16"
-      [disabled]="(loading$ | async) || asistenciaForm.invalid"
-      (click)="putAsistencia()"
+    class="bp-button-primary bp-margin-top-16"
+    [disabled]="(loading$ | async) || asistenciaForm.invalid"
+    (click)="putAsistencia()"
     >
-      <p *ngIf="!(loading$ | async)">Enviar</p>
-      <div *ngIf="loading$ | async" class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </button>
-    <a href="https://api.whatsapp.com/send?phone=5493512433952&text=Hola anii aca sta el conpruebante de transferensia"> iralwasa </a>
+    <p *ngIf="!(loading$ | async)">Enviar</p>
+    <div *ngIf="loading$ | async" class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </button>
+  <div class="bp-row">
+    <p class="bp-text-2">Por el valor de la tarjeta escribinos al:</p>
+    <a class="link" href="https://api.whatsapp.com/send?phone=5493512433952&text=Hola Ani, soy _____ quiero saber el valor de la tarjeta 😬">
+      <p class="bp-text-1 bp-row">
+        <span class="wasa"></span>
+        &nbsp;+54 9 (351) 243-3952
+      </p>
+    </a>
+  </div>
   </form>
   </div>
 </div>

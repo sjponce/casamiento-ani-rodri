@@ -73,6 +73,12 @@
   color: var(--primary-dark);
 }
 
+.bp-text-3 {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  color: var(--primary-dark);
+}
+
 .bp-link {
   color: var(--primary-blue);
   text-decoration: underline;
@@ -373,7 +379,8 @@ textarea {
   font-size: 14px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 300px;
+  max-width: 360px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid var(--neutral-gray);
   border-radius: 8px;
@@ -479,7 +486,6 @@ textarea:focus ~ .highlight {
 .radio-tile-group .input-container {
   position: relative;
   height: 30px;
-  width: 60px;
   margin: 0.5rem;
 }
 
@@ -517,7 +523,6 @@ textarea:focus ~ .highlight {
   text-align: center;
   font-size: 0.75rem;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--primary-dark);
 }

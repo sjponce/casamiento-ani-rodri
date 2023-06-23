@@ -12,7 +12,6 @@ import { FireStoreService } from './services/firestore.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-@ViewChild('audio') audio: any;
 
 loading$ = new BehaviorSubject(false);
 
@@ -31,31 +30,6 @@ constructor(private fireService: FireStoreService, private fb: FormBuilder) {
 
 musicForm: FormGroup;
 asistenciaForm: FormGroup;
-
-images = [{
-  image: 'assets/michimichi.jpg',
-  thumbImage: 'assets/michimichi.jpeg',
-  alt: 'UN MICHI',
-},
-{
-  image: 'assets/michinegro.webp',
-  thumbImage: 'assets/michinegro.jpeg',
-  alt: 'OTRO MICHI',
-},
-{
-  image: 'assets/MICHIPARADO.jpg',
-  thumbImage: 'assets/MICHIPARADO.jpeg',
-  alt: 'UN MICHI MAS',
-}]
-
-  playAudio(){
-    let audio = new Audio();
-    audio.src = "https://www.w3schools.com/tags/horse.mp3";
-    audio.load();
-    audio.play();
-  }
-
-  title = 'flamante-casorio';
 
 putMusica() {
   this.loading$.next(true);
