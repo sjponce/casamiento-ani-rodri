@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "deploy": "ng deploy --base-href=/flamante-casorio/",
+    "deploy": "ng deploy --base-href=/casamiento-ani-rodri/",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
