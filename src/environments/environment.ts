@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: "AIzaSyAXq2WsW_WUsMQnL5Pi0tEJEqpkidyU1D0",
-    authDomain: "flamante-casorio.firebaseapp.com",
-    projectId: "flamante-casorio",
-    storageBucket: "flamante-casorio.appspot.com",
-    messagingSenderId: "111706990416",
-    appId: "1:111706990416:web:6cf8d8fb04738d20ae6e55"
+    apiKey: "AIzaSyBUH9C87fr_eTGx57vkopkShQW_YqeBd38",
+    authDomain: "casamiento-ani-rodri.firebaseapp.com",
+    projectId: "casamiento-ani-rodri",
+    storageBucket: "casamiento-ani-rodri.appspot.com",
+    messagingSenderId: "521661524194",
+    appId: "1:521661524194:web:e8679dd3b3549656ac16bb",
+    measurementId: "G-H77M6SWB3G"
   },
 };

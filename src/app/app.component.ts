@@ -44,6 +44,7 @@ putMusica() {
         showConfirmButton: false,
         position: 'bottom-right'
       });
+      this.loading$.next(false);
       throw e;
     }),
   ).subscribe(() => {
@@ -71,13 +72,14 @@ putAsistencia() {
     take(1),
     catchError((e: Error) => {
       Swal.fire({
-        text: 'No se pudo agregar la canción :(',
+        text: 'No se pudo agregar la Asistencia :(',
         toast: true,
         icon: 'error',
         timer: 1500,
         showConfirmButton: false,
         position: 'bottom-right'
       });
+      this.loading$.next(false);
       throw e;
     }),
   ).subscribe(() => {
